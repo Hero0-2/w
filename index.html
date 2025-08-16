@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .invitacion {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invitacion::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, #e8cbc0, #a38f85, #e8cbc0);
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #a38f85;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .nombres {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #6d5d54;
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+
+        .fecha, .lugar {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: #6d5d54;
+        }
+
+        .detalles {
+            margin: 40px 0;
+            padding: 20px;
+            border-top: 1px dashed #e8cbc0;
+            border-bottom: 1px dashed #e8cbc0;
+        }
+
+        .codigo-vestimenta {
+            font-style: italic;
+            margin: 20px 0;
+            color: #a38f85;
+        }
+
+        .rsvp {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f5ebe6;
+            border-radius: 8px;
+        }
+
+        .rsvp-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background-color: #a38f85;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .rsvp-btn:hover {
+            background-color: #6d5d54;
+            transform: translateY(-2px);
+        }
+
+        .flores {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .flor1 {
+            top: 20px;
+            left: 20px;
+            transform: rotate(-15deg);
+        }
+
+        .flor2 {
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(15deg);
+        }
+
+        @media (max-width: 768px) {
+            .invitacion {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+
+            .nombres {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .fecha, .lugar {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="invitacion">
+        <!-- Decoración floral -->
+        <div class="flores flor1">🌸</div>
+        <div class="flores flor2">🌸</div>
+
+        <div class="header">
+            <h1>Tienen el honor de invitarlos a celebrar su matrimonio</h1>
+        </div>
+
+        <div class="nombres">
+            Flavia <span style="font-size: 2rem;">&</span> Eros
+        </div>
+
+        <div class="fecha">
+            04 de Septiembre de 2025
+        </div>
+
+        <div class="lugar">
+            Palacio de los Matrimonios<br>
+            La Habana, Cuba
+        </div>
+
+        <div class="detalles">
+            <p>Ceremonia: 2:40 PM</p>
+            <p>Recepción: 4:00 PM</p>
+            <p class="codigo-vestimenta">Código de vestimenta: Formal</p>
+        </div>
+
+        <div class="rsvp">
+            <p>Por favor confirma tu asistencia antes del 3 de Septiembre</p>
+            <a href="#rsvp-form" class="rsvp-btn">Confirmar Asistencia</a>
+        </div>
+    </div>
+</body>
+</html>
