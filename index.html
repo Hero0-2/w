@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Kamean';
             background-color: #f9f5f0;
             color: #333;
             line-height: 1.6;
@@ -21,8 +21,7 @@
 
         .invitacion {
             max-width: 800px;
-            margin: 40px auto;
-            padding: 40px;
+            background-image: url(FONDO.jpg);
             background-color: #fff;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -31,17 +30,18 @@
             overflow: hidden;
         }
 
-        .invitacion::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
+        @font-face {
+            font-family: 'Kamean' ;
+            src: url(./Kamean.woff);
+            font-style: normal;
+            font-weight: normal;
         }
+
+        
 
         .header {
             margin-bottom: 30px;
+            margin-top: 20px;
             height: fit-content;
             weight: fit-content
         }
@@ -51,15 +51,16 @@
         .nombres {
             font-size: 3.5rem;
             font-weight: 700;
-            color: #6d5d54;
+            color: #4f433c;
             margin: 20px 0;
             line-height: 1.2;
         }
 
         .fecha, .lugar {
             font-size: 0.2rem;
-            margin: 15px 0;
+            margin: 10px 0;
             color: #6d5d54;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
         .detalles {
@@ -67,19 +68,26 @@
             padding: 20px;
             border-top: 1px dashed #e8cbc0;
             border-bottom: 1px dashed #e8cbc0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
         .codigo-vestimenta {
             font-style: italic;
             margin: 20px 0;
-            color: #a38f85;
+            color: #504946;
+            font-family: 'Kamean';
         }
 
         .rsvp {
             margin-top: 30px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
             padding: 20px;
             background-color: #f5ebe6;
             border-radius: 8px;
+            font-size: 0.8rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
         .rsvp-btn {
@@ -90,7 +98,7 @@
             color: white;
             text-decoration: none;
             border-radius: 30px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
 
@@ -99,40 +107,23 @@
             transform: translateY(-2px);
         }
 
-        .flores {
-            position: absolute;
-            opacity: 0.1;
-            z-index: -1;
-        }
 
-        .flor1 {
-            top: 20px;
-            left: 20px;
-            transform: rotate(-15deg);
-        }
-
-        .flor2 {
-            bottom: 20px;
-            right: 20px;
-            transform: rotate(15deg);
-        }
 
         @media (max-width: 768px) {
             .invitacion {
-                margin: 20px;
-                padding: 30px 20px;
+                
+                
             }
 
             .nombres {
                 font-size: 2.5rem;
             }
 
-            h1 {
-                font-size: 2rem;
-            }
+        
 
             .fecha, .lugar {
-                font-size: 0.7rem;
+                font-size: 0.9rem;
+                
             }
         }
     </style>
@@ -140,9 +131,7 @@
 </head>
 <body>
     <div class="invitacion">
-        <!-- Decoración floral -->
-        <div class="flores flor1">🌸</div>
-        <div class="flores flor2">🌸</div>
+        
         
         <div class="header">
             <img src="P60 CON FILTRO.png">
@@ -153,7 +142,7 @@
         </div>
 
         <div class="fecha">
-            04 de Septiembre de 2025
+            jueves 4 de septiembre de 2025
         </div>
 
         <div class="lugar">
@@ -162,15 +151,24 @@
         </div>
 
         <div class="detalles">
-            <p>Ceremonia: 2:40 PM</p>
+            <p>Hora: 2:40 PM</p>
             
-            <p class="codigo-vestimenta">Después de la ceremonia haremos un pequeño brindis en nuestra casa</p>
+            <p class="codigo-vestimenta">Después de la ceremonia vinito y fiestecita en nuestra casa</p>
         </div>
 
         <div class="rsvp">
-            <p>Por favor confirma tu asistencia antes del 3 de Septiembre</p>
-            <a href="#rsvp-form" class="rsvp-btn">Confirmar Asistencia</a>
+            <p>Se puso seria la cosa <br> Dinos si vienes antes del 3 de septiembre</p>
+            <button class="rsvp-btn" onclick="sendConfirmation()">Confirmar asistencia</button>
         </div>
     </div>
 </body>
+<script>
+    function sendConfirmation(){
+        const phone = "+5359734072"
+        var url = "https://wa.me/" + phone + "?text=Confirmada mi asistencia"
+        console.log("Funciona")
+
+        window.open(url, '_blank').focus()
+    }
+</script>
 </html>
